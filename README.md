@@ -1,8 +1,18 @@
 # JavaScript入門
 
+- JavaScriptの基礎について学ぶ
+
+## 参考
+
+- [【初心者向け入門】JavaScriptの基礎 - Qiita](https://qiita.com/ab-boy_ringo/items/23f60e051e3022f2a599)
+
+
 ## ダイアログを用いたユーザー認証
 
-`index.html`
+- サンプルコード
+  - アクセス時に表示されるプロンプトに名前を入力すると、ユーザ認証が行われる。
+
+`dialog-auth.html`
 ```html
 <script>
     alert("このサイトは信用できません");
@@ -55,7 +65,7 @@
 </script>
 ```
 
-## 最代入不可能変数の定義
+## 再代入不可能変数の定義
 
 ```js
 <script>
@@ -110,6 +120,3 @@
 </script>
 ```
 
-# 参考
-
-- [【初心者向け入門】JavaScriptの基礎 - Qiita](https://qiita.com/ab-boy_ringo/items/23f60e051e3022f2a599)
