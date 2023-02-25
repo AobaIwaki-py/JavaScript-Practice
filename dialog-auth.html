@@ -1,0 +1,23 @@
+<script>
+    alert("このサイトは信用できません");
+    var con = confirm("接続していいですか？");
+    var pro = prompt("名前を入力してください");
+    
+    if(pro){
+        alert("You entered \"" + pro + "\".");
+    }
+    else{
+        alert("You didn't enterd.")
+    }
+    if(pro=="name"){
+        document.write("認証されたユーザです");
+        document.write("<br>");
+        document.write("(You chose \"OK\".)");
+    }
+    else{
+        document.write("ユーザーが存在しません");
+        document.write("<br>");
+        document.write("(You chose \"Cancel\".)");
+    }
+
+</script>

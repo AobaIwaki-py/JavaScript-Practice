@@ -1,0 +1,28 @@
+<body>
+    <script>
+        function btn2()
+        {
+            alert("You click submit2");
+        }
+
+        function btn4()
+        {
+            alert("You doubleClick submit4");
+        }
+    </script>
+
+    <!-- onclick="" 内の命令が1つの場合はセミコロン省略可能 -->
+    <!-- onclick･･･1回押されたら -->
+    <input type="submit" value="submit1_click!" onclick="alert('You click submit1')">
+    <br>
+    <input type="submit" value="submit2_click!" onclick="btn2()">
+    <br>
+    <!-- ondblclick･･･2回連続して押されたら -->
+    <input type="submit" value="submit3_doubleClick!" ondblclick="alert('You doubleClick submit3');">
+    <br>
+    <input type="submit" value="submit4_doubleClick!" ondblclick="btn4()">
+    <br>
+    <!-- onmouseover･･･マウスカーソルを重ねたら -->
+    <input type="submit" value="submit5_mouseover" onmouseover="alert('Mouseover now!')">
+    <br>
+</body>
