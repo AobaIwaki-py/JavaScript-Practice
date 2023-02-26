@@ -1,0 +1,31 @@
+<body>
+    <!-- 以下は、HTML内部にJavaScriptを書いた場合 -->
+    <script>
+        function btn2()
+        {
+            alert("2: ログインしますか？");
+        }
+
+        function btn4()
+        {
+            alert("4 : 実行しますか？");
+        }
+    </script>
+    <!-- 以下は、.jsファイルから関数群を読み込む場合 -->
+    <!-- <script src="./app.js"></script> -->
+
+    <!-- onclick="" 内の命令が1つの場合はセミコロン省略可能 -->
+    <!-- onclick･･･1回押されたら -->
+    <input type="submit" value="1 : アラートを表示(クリック)" onclick="alert('1 : このボタンに現在機能はありません')">
+    <br>
+    <input type="submit" value="2 : ログイン確認(クリック)" onclick="btn2()">
+    <br>
+    <!-- ondblclick･･･2回連続して押されたら -->
+    <input type="submit" value="3 : アラートを表示(ダブルクリック)" ondblclick="alert('3 : このボタンに現在機能はありません');">
+    <br>
+    <input type="submit" value="4 : 実行確認(ダブルクリック)" ondblclick="btn4()">
+    <br>
+    <!-- onmouseover･･･マウスカーソルを重ねたら -->
+    <input type="submit" value="5 : ホバーで詳細を表示" onmouseover="alert('5 : 詳細な情報はありません')">
+    <br>
+</body>

@@ -1,28 +1,38 @@
 <body>
     <script>
-        function btn2()
-        {
-            alert("You click submit2");
-        }
+        document.write(Math.round(2.4)); //四捨五入による切り捨て例
+        document.write("<br>");
+        document.write(Math.round(2.5)); //四捨五入による切り上げ例
+        document.write("<br>");
+        document.write(Math.ceil(1.2));  //切り上げ例
+        document.write("<br>");
+        document.write(Math.floor(3.8)); //切り捨て例
+        document.write("<br>");
+        document.write(Math.abs(-5));    //絶対値を取得
+        document.write("<br>");
+        document.write(Math.max(-1,0,1));//最大値を取得
+        document.write("<br>");
+        document.write(Math.min(-1,0,1));//最小値を取得
+        document.write("<br>");
 
-        function btn4()
-        {
-            alert("You doubleClick submit4");
+        function getRandomInt1(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //最大値を除く乱数の取得
+
         }
+        document.write(getRandomInt1(4,8)); //上の関数から4以上8未満の整数のうち，いずれかを取得
+
+        document.write("<br>");
+
+        function getRandomInt2(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min +1)) + min; //最大値を含む乱数の取得
+
+        }       
+        document.write(getRandomInt2(4,8)); //上の関数から4以上8以下の整数のうち，いずれかを取得
+
+        document.write("<br>");
     </script>
-
-    <!-- onclick="" 内の命令が1つの場合はセミコロン省略可能 -->
-    <!-- onclick･･･1回押されたら -->
-    <input type="submit" value="submit1_click!" onclick="alert('You click submit1')">
-    <br>
-    <input type="submit" value="submit2_click!" onclick="btn2()">
-    <br>
-    <!-- ondblclick･･･2回連続して押されたら -->
-    <input type="submit" value="submit3_doubleClick!" ondblclick="alert('You doubleClick submit3');">
-    <br>
-    <input type="submit" value="submit4_doubleClick!" ondblclick="btn4()">
-    <br>
-    <!-- onmouseover･･･マウスカーソルを重ねたら -->
-    <input type="submit" value="submit5_mouseover" onmouseover="alert('Mouseover now!')">
-    <br>
 </body>

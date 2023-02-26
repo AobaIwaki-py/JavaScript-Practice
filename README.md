@@ -40,6 +40,45 @@
 </script>
 ```
 
+## クリックやホバー時の動作
+
+- サンプルコード
+  -  クリック時にアラートを表示する方法
+  -  クリック時に関数を呼び出す方法
+  -  ダブルクリック、ホバー
+
+`click-hover.html`
+```html
+<body>
+    <script>
+        function btn2()
+        {
+            alert("2: ログインしますか？");
+        }
+
+        function btn4()
+        {
+            alert("4 : 実行しますか？");
+        }
+    </script>
+
+    <!-- onclick="" 内の命令が1つの場合はセミコロン省略可能 -->
+    <!-- onclick･･･1回押されたら -->
+    <input type="submit" value="1 : アラートを表示(クリック)" onclick="alert('1 : このボタンに現在機能はありません')">
+    <br>
+    <input type="submit" value="2 : ログイン確認(クリック)" onclick="btn2()">
+    <br>
+    <!-- ondblclick･･･2回連続して押されたら -->
+    <input type="submit" value="3 : アラートを表示(ダブルクリック)" ondblclick="alert('3 : このボタンに現在機能はありません');">
+    <br>
+    <input type="submit" value="4 : 実行確認(ダブルクリック)" ondblclick="btn4()">
+    <br>
+    <!-- onmouseover･･･マウスカーソルを重ねたら -->
+    <input type="submit" value="5 : ホバーで詳細を表示" onmouseover="alert('5 : 詳細な情報はありません')">
+    <br>
+</body>
+```
+
 ## 再定義可能関数の定義
 
 ```js
@@ -119,3 +158,52 @@
 </script>
 ```
 
+## オブジェクト指向
+
+```js
+<script>
+   //オブジェクト作成 newで作成する
+   var person = new Object();
+</script>
+```
+
+## オブジェクトプロトタイプ
+
+```js
+<script>
+    //あらかじめ，雛形を作っておくやり方
+    function person(name,email)
+    {
+        //thisで自身のプロパティにアクセス
+        this.name=name;
+        this.email=email;
+    }  
+    var yamada = new person("山田","yamada@hoge.hoge");
+</script>
+```
+
+## 無名関数
+
+- オブジェクトのメンバーにすることもできる
+
+```js
+<script>
+    //変数に関数を代入
+    var make_alert = function(){ alert("無名関数で警告を表示しています"); };
+
+    //変数名で呼び出す
+    make_alert();
+
+    //オブジェクトのメンバーにできる
+    var person = new Object();
+
+    person.name = "yamada";
+    person.email = "yamada@hoge.hoge";
+    person.func_in_object = function()
+    {
+    document.write("オブジェクト内関数を呼び出しました");
+    }
+
+    person.func_in_object(); 
+</script>
+```
