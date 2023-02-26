@@ -6,7 +6,7 @@
 
 学習の成果を確かめるために作成したものと習得した技術
 
-- [Pokemon APIを利用したポケモン検索サイト - GitHub]()
+- [Pokemon APIを利用したポケモン検索サイト - GitHub](https://github.com/AobaIwaki-py/Pokemon-Dictionary)
   - HTMLからJSへ入力の受け渡し
   - JSで検索対象のポケモンの情報を取得
   - JSでHTMLを作成し返却
