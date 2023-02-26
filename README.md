@@ -2,10 +2,21 @@
 
 - JavaScriptの基礎について学ぶ
 
+## 成果物
+
+学習の成果を確かめるために作成したものと習得した技術
+
+- [Pokemon APIを利用したポケモン検索サイト - GitHub]()
+  - HTMLからJSへ入力の受け渡し
+  - JSで検索対象のポケモンの情報を取得
+  - JSでHTMLを作成し返却
+
 ## 参考
 
 - [【初心者向け入門】JavaScriptの基礎 - Qiita](https://qiita.com/ab-boy_ringo/items/23f60e051e3022f2a599)
-
+- [HTMLとJavaScriptの連携 - Qiita](https://qiita.com/Teach/items/4b0104847be9f2960665)
+- [JavascriptのFetch APIを使ってJSONを取得する。 - Qiita](https://qiita.com/tarch710/items/91b8abc124a7efbc7a93)
+- [フェッチ API の使用 - Web API | MDN](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch)
 
 ## ダイアログを用いたユーザー認証
 
@@ -50,6 +61,7 @@
 `click-hover.html`
 ```html
 <body>
+    <!-- 以下は、HTML内部にJSを書く方法 -->
     <script>
         function btn2()
         {
@@ -61,6 +73,9 @@
             alert("4 : 実行しますか？");
         }
     </script>
+
+    <!-- 以下は、app.jsから関数を読む方法 -->
+    <!-- <script src="./app.js"></script> -->
 
     <!-- onclick="" 内の命令が1つの場合はセミコロン省略可能 -->
     <!-- onclick･･･1回押されたら -->
@@ -206,4 +221,181 @@
 
     person.func_in_object(); 
 </script>
+```
+
+## Mathオブジェクト
+
+- 数学に関する関数がまとめられている
+
+```js
+// Example
+Math.round(2.4)
+```
+
+## 文字列長
+
+```js
+var personName="山田太郎";
+document.write(personName.length);
+// 4
+```
+
+## 指定文字列の先頭の位置
+
+```js
+//指定文字列の先頭位置
+var a="ABCabc012".indexOf("ABC"); //先頭から0番目(1文字目)を返す
+document.write("a=\"ABCabc012\".indexOf(\"ABC\") : ",a);
+// a="ABCabc012".indexOf("ABC") : 0
+```
+
+## 文字列の抽出
+
+- 文字列から指定した位置の1文字を取得：`.charAt()`
+- 文字列から指定区間の文字列を取得：`.substring()`
+```js
+//指定位置の文字列
+var d="ABCabc012".charAt();   //先頭の文字を返す
+document.write("d=\"ABCabc012\".charAt() : ",d);
+// d="ABCabc012".charAt() : A
+//指定位置から指定位置までの文字列
+var g="ABCabc012".substring(2,5); //2番目(3文字目)から5-1番目(6-1文字目)までの文字列を返す
+document.write("g=\"ABCabc012\".substring(2,5) : ",g);
+// g="ABCabc012".substring(2,5) : Cab
+```
+
+## 文字列の一致確認
+
+```js
+//文字列一致( == は使用しないこと)
+var i="ABCabc012".match("ABCabc012"); //一致の場合，文字列を返す
+document.write("i=\"ABCabc012\".match(\"ABCabc012\") : ",i);
+// i="ABCabc012".match("ABCabc012") : ABCabc012
+var j="ABCabc012".match("ABCxyz012"); //不一致の場合，nullを返す
+document.write("j=\"ABCabc012\".match(\"ABCxyz012\") : ", j);
+// j="ABCabc012".match("ABCxyz012") : null
+```
+
+## 浅いコピーと深いコピー
+
+- JavaScriptにおける浅いコピー
+- `.concat()`を用いた深いコピー
+
+```js
+// 浅いコピーと深いコピー
+var a=[1,2,3,4,5];
+var b=[1,2,3,4,5];
+document.write("コピー前のaとb");
+document.write("<br>");
+document.write("a : ",a);
+document.write("<br>");
+document.write("b : ",b);
+document.write("<br>");
+// コピー前のaとb
+// a : 1,2,3,4,5
+// b : 1,2,3,4,5
+var shallow_copy_a=[];
+var deep_copy_b=[];
+shallow_copy_a = a;
+shallow_copy_a.push(6);
+document.write("浅いコピーの後のaとshallow_copy_a");
+document.write("<br>");
+document.write("a : ",a);
+document.write("<br>");
+document.write("shallow_copy_a : ",shallow_copy_a);
+document.write("<br>");
+// 浅いコピーの後のaとshallow_copy_a
+// a : 1,2,3,4,5,6
+// shallow_copy_a : 1,2,3,4,5,6
+shallow_copy_b = b.concat();
+shallow_copy_b.push(6);
+document.write("深いコピーの後のbとdeep_copy_b");
+document.write("<br>");
+document.write("b : ",b);
+document.write("<br>");
+document.write("shallow_copy_b : ",shallow_copy_b);
+document.write("<br>");
+// 深いコピーの後のbとdeep_copy_b
+// b : 1,2,3,4,5
+// shallow_copy_b : 1,2,3,4,5,6
+```
+
+## Arrayオブジェクト
+
+- 通常の配列定義
+- Arrayオブジェクトによる配列定義
+- 数値型を文字列へ変換
+- 末端の要素を削除
+- 末尾へ要素を追加
+- 要素を逆順にする
+- 配列の結合
+
+```js
+// 通常の配列定義
+var a=[3,7,0,-5,1];
+document.write(a);//区切り文字であるカンマを含め，要素全表示
+// 3,7,0,-5,1
+
+// Arrayオブジェクトによる配列定義
+var a = new Array(-3,-2,-1,0,1,2,3);
+document.write(a);
+// -3,-2,-1,0,1,2,3
+
+//数値から文字列(配列)へ変換
+var a=314159265;
+var len=a.toString().length;
+document.write(a+" は "+len+" 桁");
+// 314159265 は 9 桁
+
+//末尾の要素削除
+var a=[3,5,-7,2,1];
+a.pop(); //末尾の要素1を削除
+document.write(a);
+// 3,5,-7,2
+
+//末尾へ指定要素追加
+var a=[3,5,-7,2,1];
+a.push(33);
+document.write(a);
+// 3,5,-7,2,1,33
+
+//要素の逆順
+var a=[3,5,-7,2,1];
+a.reverse();
+document.write("reverse : ",a);
+// 1,2,-7,5,3
+
+//配列の結合
+var a=[3,-4,0];
+var b=[-7,3,1];
+var c=a.concat(b);    //配列aの後ろにbを結合
+document.write("concat : ",c);    //要素全表示
+// 3,-4,0,-7,3,1
+```
+
+## Dateオブジェクト
+
+- 現在時刻の取得
+- Dateオブジェクトを用いて、時刻の指定
+```js
+//取得
+var date = new Date();
+var Y=date.getFullYear();      //年
+var M=date.getMonth()+1;       //月(0~11)
+var D=date.getDate();          //日
+var w=date.getDay();           //曜日(0~6)
+var week = ['SUN', "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+var h=date.getHours();         //時
+var m=date.getMinutes();       //分
+var s=date.getSeconds();       //秒
+var ms=date.getMilliseconds(); //ミリ秒
+
+document.write(Y,"/",M,"/",D,"/",week[w],":",h,":",m,":",s,".",ms);
+// 2023/2/26/SUN:13:18:25.769
+
+//指定
+var date = new Date(2020,0,31,13,30,00); //2020年1月31日 13時30分00秒
+document.write(date);
+document.write("<br>");
+// Fri Jan 31 2020 13:30:00 GMT+0900 (日本標準時)
 ```
