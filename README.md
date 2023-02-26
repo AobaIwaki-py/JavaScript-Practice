@@ -17,6 +17,7 @@
 - [HTMLとJavaScriptの連携 - Qiita](https://qiita.com/Teach/items/4b0104847be9f2960665)
 - [JavascriptのFetch APIを使ってJSONを取得する。 - Qiita](https://qiita.com/tarch710/items/91b8abc124a7efbc7a93)
 - [フェッチ API の使用 - Web API | MDN](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch)
+- [HTML + CSS を初心者に教えてみた - Qiita](https://qiita.com/pure-adachi/items/1498e40d5ccc962c0765)
 
 ## ダイアログを用いたユーザー認証
 
